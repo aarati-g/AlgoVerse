@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AlgoVerse | Learn DSA Visually</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+            NAVBAR
+    ============================ -->
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <img src="assets/logo.svg" alt="AlgoVerse Logo" class="logo-image">
+
+                <span>AlgoVerse</span>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="#">Features</a></li>
+
+                <li><a href="#">Roadmap</a></li>
+
+                <li><a href="#">Community</a></li>
+
+                <li><a href="#">About</a></li>
+
+            </ul>
+
+            <div class="nav-buttons">
+
+                <button class="login-btn">
+
+                    Login
+
+                </button>
+
+                <button class="start-btn">
+
+                    Get Started →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ===========================
+            HERO
+    ============================ -->
+
+    <section class="hero">
+
+        <div class="container hero-container">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="hero-content">
+
+                <h1>
+
+                    Master
+
+                    <span>Data Structures & Algorithms</span>
+
+                    Through Interactive Visual Learning
+
+                </h1>
+
+                <p>
+
+                    Learn DSA through beautiful visualizations,
+                    interactive coding challenges,
+                    AI-powered explanations,
+                    and real-world examples —
+                    all in one platform.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn">
+
+                        Start Learning
+
+                    </button>
+
+                    <button class="secondary-btn">
+
+                        Explore Topics
+
+                    </button>
+
+                </div>
+
+                <div class="hero-features">
+
+                    <span>✔ Beginner Friendly</span>
+
+                    <span>✔ Interactive Learning</span>
+
+                    <span>✔ AI Assisted</span>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT DEMO -->
+
+            <div class="hero-preview">
+
+                <div class="preview-card">
+
+                    <!-- HEADER -->
+
+                    <div class="algorithm-switcher">
+
+                        <button id="prevAlgo" class="algo-arrow">
+
+                            ❮
+
+                        </button>
+
+                        <h2 id="algorithmTitle">
+
+                            Binary Search
+
+                        </h2>
+
+                        <button id="nextAlgo" class="algo-arrow">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                    <!-- TOP INFO -->
+
+                    <div class="demo-info">
+
+                        <div class="info-box">
+
+                            <span class="info-label">
+
+                                STEP
+
+                            </span>
+
+                            <span id="stepNumber">
+
+                                1 / 4
+
+                            </span>
+
+                        </div>
+
+                        <div class="info-box">
+
+                            <span class="info-label" id="infoTitle">
+
+                                TARGET
+
+                            </span>
+
+                            <span id="infoValue">
+
+                                27
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- VISUALIZATION -->
+
+                    <div class="visualization">
+
+                        <div class="pointer">
+
+                            ▼
+
+                        </div>
+
+                        <div id="arrayContainer" class="array-row">
+
+                        </div>
+
+                        <div id="pointerLabel" class="pointer-label">
+
+                            Current Mid
+
+                        </div>
+
+                    </div>
+
+                    <!-- CONSOLE -->
+
+                    <div class="console">
+
+                        <div class="console-header">
+
+                            <span>
+
+                                Algorithm Log
+
+                            </span>
+
+                        </div>
+
+                        <div class="console-output" id="consoleOutput">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+            SCRIPTS
+    ============================ -->
+
+    <script src="js/data/algorithms.js"></script>
+
+    <script src="js/ui/hero.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
