@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoVerse | Coding Playground</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/playground.css">
+</head>
+<body>
+    <!-- ===========================
+            NAVBAR
+    ============================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="assets/logo.svg" alt="AlgoVerse Logo" class="logo-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><circle cx=\'24\' cy=\'24\' r=\'24\' fill=\'%236366F1\'/></svg>'">
+                <span>AlgoVerse</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="visualizer.html">Visualizer</a></li>
+                <li><a href="#" class="active">Playground</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="login-btn">Login</button>
+                <button class="start-btn" onclick="window.location.href='index.html'">Back to Home</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===========================
+            PLAYGROUND WORKSPACE
+    ============================ -->
+    <div class="playground-workspace">
+        
+        <!-- LEFT PANE: EDITOR -->
+        <div class="pane editor-pane">
+            <div class="pane-header">
+                <div class="pane-title">
+                    <span class="icon">💻</span>
+                    <h3>main.js</h3>
+                </div>
+                <div class="editor-controls">
+                    <select class="language-select">
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                    <button id="btnRun" class="primary-btn run-btn">Run Code ▶</button>
+                </div>
+            </div>
+            <div class="editor-container">
+                <div class="line-numbers" id="lineNumbers">1</div>
+                <textarea id="codeEditor" class="code-editor" spellcheck="false" placeholder="Write your JavaScript code here..."></textarea>
+            </div>
+        </div>
+
+        <!-- RIGHT PANE: OUTPUT -->
+        <div class="pane output-pane">
+            <div class="pane-header">
+                <div class="pane-title">
+                    <span class="icon">🖥️</span>
+                    <h3>Output Console</h3>
+                </div>
+                <button id="btnClear" class="secondary-btn clear-btn">Clear</button>
+            </div>
+            <div class="console-container" id="outputConsole">
+                <div class="console-msg system">AlgoVerse Runtime Environment v1.0.0 ready.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===========================
+            SCRIPTS
+    ============================ -->
+    <script src="js/ui/playground.js"></script>
+</body>
+</html>
