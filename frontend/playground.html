@@ -59,17 +59,36 @@
             </div>
         </div>
 
-        <!-- RIGHT PANE: OUTPUT -->
+        <!-- RIGHT PANE: OUTPUT & AI -->
         <div class="pane output-pane">
-            <div class="pane-header">
-                <div class="pane-title">
-                    <span class="icon">🖥️</span>
-                    <h3>Output Console</h3>
+            <div class="pane-header tabs-header">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-target="consoleView">
+                        <span class="icon">🖥️</span> Console
+                    </button>
+                    <button class="tab-btn" data-target="aiView">
+                        <span class="icon">🤖</span> AI Mentor
+                    </button>
                 </div>
                 <button id="btnClear" class="secondary-btn clear-btn">Clear</button>
             </div>
-            <div class="console-container" id="outputConsole">
+            
+            <!-- CONSOLE VIEW -->
+            <div class="console-container tab-content active" id="consoleView">
                 <div class="console-msg system">AlgoVerse Runtime Environment v1.0.0 ready.</div>
+            </div>
+
+            <!-- AI MENTOR VIEW -->
+            <div class="ai-chat-container tab-content" id="aiView" style="display: none;">
+                <div class="chat-history" id="chatHistory">
+                    <div class="chat-msg ai-msg">
+                        <p>Hi! I'm AlgoBot, your personal AI Mentor. Ask me a question about your code or algorithms!</p>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="aiInput" placeholder="Ask a question... (e.g. Can you review this code?)">
+                    <button id="btnSendAI" class="primary-btn">Send</button>
+                </div>
             </div>
         </div>
 
@@ -79,5 +98,6 @@
             SCRIPTS
     ============================ -->
     <script src="js/ui/playground.js"></script>
+    <script src="js/ui/aiMentor.js"></script>
 </body>
 </html>

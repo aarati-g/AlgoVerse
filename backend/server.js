@@ -15,6 +15,7 @@ app.use(express.json()); // Body parser
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/ai', require('./routes/aiRoutes'));
 
 // Default Route
 app.get('/', (req, res) => {
