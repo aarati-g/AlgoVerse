@@ -1,6 +1,10 @@
 let currentAlgorithm = 0;
 
-function renderHero(){
+let binaryStep = 0;
+
+let bubbleStep = 0;
+
+function renderHero() {
 
     const data = algorithms[currentAlgorithm];
 
@@ -8,79 +12,142 @@ function renderHero(){
 
     document.getElementById("stepNumber").textContent = data.step;
 
-    document.getElementById("pointerLabel").textContent = data.pointer;
-
     document.getElementById("infoTitle").textContent = data.infoTitle;
 
     document.getElementById("infoValue").textContent = data.infoValue;
 
-    renderVisualization(data);
-
-    renderConsole(data);
+    renderCurrentState();
 
 }
 
-function renderVisualization(data){
+function renderCurrentState(){
 
-    const container=document.getElementById("arrayContainer");
+    const data = algorithms[currentAlgorithm];
 
-    container.innerHTML="";
+    if(data.id==="binary"){
 
-    if(data.type==="boxes"){
-
-        data.values.forEach((value,index)=>{
-
-            const box=document.createElement("div");
-
-            box.className="array-item";
-
-            box.textContent=value;
-
-            if(index===data.active)
-                box.classList.add("active");
-
-            if(index===data.targetIndex)
-                box.classList.add("target");
-
-            container.appendChild(box);
-
-        });
+        renderBinary();
 
     }
 
     else{
 
-        data.values.forEach((value,index)=>{
-
-            const bar=document.createElement("div");
-
-            bar.className="bar";
-
-            bar.style.height=`${value*16}px`;
-
-            bar.innerHTML=`<span>${value}</span>`;
-
-            if(index===data.active)
-                bar.classList.add("active");
-
-            if(index===data.targetIndex)
-                bar.classList.add("target");
-
-            container.appendChild(bar);
-
-        });
+        renderBubble();
 
     }
 
 }
 
-function renderConsole(data){
+function renderBinary(){
+
+    const state = binarySteps[binaryStep];
+
+    document.getElementById("stepNumber").textContent =
+        `${binaryStep + 1} / ${binarySteps.length}`;
+
+    document.getElementById("infoTitle").textContent = "TARGET";
+
+    document.getElementById("infoValue").textContent = "27";
+
+    document.getElementById("pointerLabel").textContent = state.pointer;
+
+    renderBoxes(state);
+
+    renderConsole(state.console);
+
+}
+
+function renderBubble(){
+
+    const state = bubbleSteps[bubbleStep];
+
+    document.getElementById("stepNumber").textContent =
+        `${bubbleStep + 1} / ${bubbleSteps.length}`;
+
+    document.getElementById("infoTitle").textContent = "COMPARING";
+
+    document.getElementById("infoValue").textContent =
+        `${state.values[state.active] ?? "-"} ↔ ${state.values[state.target] ?? "-"}`;
+
+    document.getElementById("pointerLabel").textContent = state.pointer;
+
+    renderBars(state);
+
+    renderConsole(state.console);
+
+}
+
+function renderBoxes(state){
+
+    const container=document.getElementById("arrayContainer");
+
+    container.innerHTML="";
+
+    algorithms[0].values.forEach((value,index)=>{
+
+        const box=document.createElement("div");
+
+        box.className="array-item";
+
+        box.textContent=value;
+
+        if(index===state.active)
+
+            box.classList.add("active");
+
+        if(index===state.target)
+
+            box.classList.add("target");
+
+        container.appendChild(box);
+
+    });
+
+}
+
+function renderBars(state){
+
+    const container = document.getElementById("arrayContainer");
+
+    container.innerHTML = "";
+
+    state.values.forEach((value,index)=>{
+
+        const bar = document.createElement("div");
+
+        bar.className = "bar";
+
+        bar.style.height = `${value*16}px`;
+
+        bar.innerHTML = `<span>${value}</span>`;
+
+        if(index===state.active){
+
+            bar.classList.add("active");
+
+            bar.classList.add("swap");
+
+        }
+
+        if(index===state.target){
+
+            bar.classList.add("target");
+
+        }
+
+        container.appendChild(bar);
+
+    });
+
+}
+
+function renderConsole(lines){
 
     const consoleBox=document.getElementById("consoleOutput");
 
     consoleBox.innerHTML="";
 
-    data.console.forEach(line=>{
+    lines.forEach(line=>{
 
         const p=document.createElement("p");
 
@@ -92,34 +159,92 @@ function renderConsole(data){
 
 }
 
-function nextAlgorithm(){
+document.getElementById("nextAlgo").addEventListener("click",()=>{
 
-    currentAlgorithm++;
+    if(currentAlgorithm===0){
 
-    if(currentAlgorithm>=algorithms.length){
+        if(binaryStep < binarySteps.length-1){
 
-        currentAlgorithm=0;
+            binaryStep++;
 
-    }
+            renderCurrentState();
 
-    renderHero();
+        }
 
-}
+        else{
 
-function previousAlgorithm(){
+            currentAlgorithm=1;
 
-    currentAlgorithm--;
+            renderHero();
 
-    if(currentAlgorithm<0){
-
-        currentAlgorithm=algorithms.length-1;
+        }
 
     }
 
-    renderHero();
+    else{
 
-}
+        if(bubbleStep < bubbleSteps.length-1){
 
-document.getElementById("nextAlgo").addEventListener("click",nextAlgorithm);
+            bubbleStep++;
 
-document.getElementById("prevAlgo").addEventListener("click",previousAlgorithm);
+            renderCurrentState();
+
+        }
+
+        else{
+
+            currentAlgorithm=0;
+
+            renderHero();
+
+        }
+
+    }
+
+});
+
+document.getElementById("prevAlgo").addEventListener("click",()=>{
+
+    if(currentAlgorithm===0){
+
+        if(binaryStep>0){
+
+            binaryStep--;
+
+            renderCurrentState();
+
+        }
+
+        else{
+
+            currentAlgorithm=1;
+
+            renderHero();
+
+        }
+
+    }
+
+    else{
+
+        if(bubbleStep>0){
+
+            bubbleStep--;
+
+            renderCurrentState();
+
+        }
+
+        else{
+
+            currentAlgorithm=0;
+
+            renderHero();
+
+        }
+
+    }
+
+});
+
+renderHero();

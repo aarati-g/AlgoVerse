@@ -112,7 +112,7 @@
 
                     </button>
 
-                    <button class="secondary-btn">
+                    <button class="secondary-btn" onclick="window.location.href='visualizer.html'">
 
                         Explore Topics
 
@@ -137,6 +137,7 @@
             <div class="hero-preview">
 
                 <div class="preview-card">
+                    <div id="demoContent">
 
                     <!-- HEADER -->
 
@@ -161,7 +162,7 @@
                         </button>
 
                     </div>
-
+                    </div>
                     <!-- TOP INFO -->
 
                     <div class="demo-info">
@@ -251,12 +252,323 @@
     </section>
 
     <!-- ===========================
+            FEATURES
+    ============================ -->
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need to <span>Master DSA</span></h2>
+                <p>A complete ecosystem designed to take you from beginner to interview-ready.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3>Interactive Visualizations</h3>
+                    <p>See exactly how algorithms work under the hood with step-by-step visual breakdowns.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Mentor</h3>
+                    <p>Get personalized hints, code reviews, and explanations from our AI-powered learning assistant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Coding Playground</h3>
+                    <p>Practice implementing algorithms in our built-in code editor with instant visual feedback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Structured Roadmaps</h3>
+                    <p>Follow a curated learning path that builds your knowledge step-by-step, from Arrays to DP.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Interview Preparation</h3>
+                    <p>Tackle real-world interview questions from top tech companies with guided solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your mastery level, track completed topics, and maintain your learning streak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            DSA ROADMAP
+    ============================ -->
+
+    <section class="roadmap-section" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Ultimate <span>Learning Path</span></h2>
+                <p>Follow our structured curriculum to build a solid foundation.</p>
+            </div>
+            <div class="roadmap-container">
+                <div class="roadmap-node">
+                    <div class="node-circle">1</div>
+                    <div class="node-content">
+                        <h3>Arrays & Hashing</h3>
+                        <p>The fundamentals of contiguous memory and key-value pairs.</p>
+                    </div>
+                </div>
+                <div class="roadmap-node">
+                    <div class="node-circle">2</div>
+                    <div class="node-content">
+                        <h3>Two Pointers & Strings</h3>
+                        <p>Optimizing array traversals and string manipulations.</p>
+                    </div>
+                </div>
+                <div class="roadmap-node">
+                    <div class="node-circle">3</div>
+                    <div class="node-content">
+                        <h3>Linked Lists</h3>
+                        <p>Understanding dynamic data structures and pointer manipulation.</p>
+                    </div>
+                </div>
+                <div class="roadmap-node">
+                    <div class="node-circle">4</div>
+                    <div class="node-content">
+                        <h3>Stacks & Queues</h3>
+                        <p>LIFO and FIFO principles and their applications.</p>
+                    </div>
+                </div>
+                <div class="roadmap-node">
+                    <div class="node-circle">5</div>
+                    <div class="node-content">
+                        <h3>Trees & Graphs</h3>
+                        <p>Hierarchical data, traversals (BFS/DFS), and shortest paths.</p>
+                    </div>
+                </div>
+                <div class="roadmap-node">
+                    <div class="node-circle">6</div>
+                    <div class="node-content">
+                        <h3>Dynamic Programming</h3>
+                        <p>Solving complex problems by breaking them down into subproblems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            TOPICS
+    ============================ -->
+
+    <section class="topics-section" id="topics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore <span>Algorithms</span></h2>
+                <p>Dive deep into specific data structures and algorithms.</p>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="difficulty easy">Easy</span>
+                        <span class="time-complexity">O(log n)</span>
+                    </div>
+                    <h3>Binary Search</h3>
+                    <p>Efficiently search a sorted array by repeatedly dividing the search interval in half.</p>
+                    <button class="explore-btn" onclick="window.location.href='visualizer.html'">Explore Visualizer →</button>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="difficulty medium">Medium</span>
+                        <span class="time-complexity">O(n log n)</span>
+                    </div>
+                    <h3>Merge Sort</h3>
+                    <p>A divide-and-conquer algorithm that sorts an array by dividing it into two halves.</p>
+                    <button class="explore-btn" onclick="window.location.href='visualizer.html'">Explore Visualizer →</button>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <span class="difficulty hard">Hard</span>
+                        <span class="time-complexity">O(V + E)</span>
+                    </div>
+                    <h3>Dijkstra's Algorithm</h3>
+                    <p>Find the shortest path between nodes in a graph with non-negative edge weights.</p>
+                    <button class="explore-btn" onclick="window.location.href='visualizer.html'">Explore Visualizer →</button>
+                </div>
+            </div>
+            <div class="view-all-container">
+                <button class="secondary-btn">View All 100+ Topics</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            STATISTICS
+    ============================ -->
+
+    <section class="stats-section" id="stats">
+        <div class="container stats-container">
+            <div class="stat-box">
+                <h3 class="counter" data-target="500">0</h3>
+                <span class="plus">+</span>
+                <p>Problems</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="counter" data-target="100">0</h3>
+                <span class="plus">+</span>
+                <p>Algorithms</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="counter" data-target="50">0</h3>
+                <span class="plus">+</span>
+                <p>Visualizers</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="counter" data-target="10000">0</h3>
+                <span class="plus">+</span>
+                <p>Students</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            AI MENTOR PREVIEW
+    ============================ -->
+
+    <section class="ai-preview" id="ai-mentor">
+        <div class="container ai-container">
+            <div class="ai-content">
+                <h2>Meet Your <span>AI Mentor</span></h2>
+                <p>Stuck on a problem? Our intelligent AI mentor analyzes your code, provides targeted hints without giving away the answer, and explains complex concepts in plain English.</p>
+                <ul class="ai-features">
+                    <li><span class="ai-check">✨</span> Code Analysis & Review</li>
+                    <li><span class="ai-check">✨</span> Conceptual Explanations</li>
+                    <li><span class="ai-check">✨</span> Step-by-step Hints</li>
+                    <li><span class="ai-check">✨</span> Complexity Breakdown</li>
+                </ul>
+                <button class="primary-btn">Try AI Mentor</button>
+            </div>
+            <div class="ai-visual">
+                <div class="ai-chat-card">
+                    <div class="chat-header">
+                        <div class="ai-avatar">🤖</div>
+                        <span>AlgoBot</span>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-msg user-msg">
+                            <p>Why is my Binary Search returning -1 when the element is there?</p>
+                        </div>
+                        <div class="chat-msg ai-msg">
+                            <p>Look closely at your <code>while</code> loop condition. You are using <code>while (left < right)</code>. What happens if the target is exactly at the final remaining element? You might need to change it to <code>while (left <= right)</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            TESTIMONIALS
+    ============================ -->
+
+    <section class="testimonials" id="community">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loved by <span>Students</span></h2>
+                <p>Join thousands of learners mastering DSA visually.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"The interactive visualizations finally made recursion click for me. I was able to pass my technical interview at Amazon!"</p>
+                    <div class="user-info">
+                        <div class="user-avatar" style="background: var(--primary);">S</div>
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <span>Software Engineer II</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"The best DSA platform out there. The combination of code execution and visual state changes is incredible."</p>
+                    <div class="user-info">
+                        <div class="user-avatar" style="background: var(--accent);">M</div>
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <span>CS Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"The AI mentor is like having a senior engineer sitting next to you. It gives hints instead of just handing out solutions."</p>
+                    <div class="user-info">
+                        <div class="user-avatar" style="background: var(--secondary);">A</div>
+                        <div>
+                            <h4>Alex Rivera</h4>
+                            <span>Frontend Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            FOOTER
+    ============================ -->
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="assets/logo.svg" alt="AlgoVerse Logo" class="logo-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><circle cx=\'24\' cy=\'24\' r=\'24\' fill=\'%236366F1\'/></svg>'">
+                    <span>AlgoVerse</span>
+                </div>
+                <p>Master Data Structures & Algorithms through beautiful interactive visualizations.</p>
+                <div class="social-links">
+                    <a href="#">X</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Discord</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Platform</h4>
+                    <a href="visualizer.html">Visualizers</a>
+                    <a href="#">Playground</a>
+                    <a href="#">Roadmap</a>
+                    <a href="#">AI Mentor</a>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Interview Prep</a>
+                    <a href="#">Cheatsheets</a>
+                    <a href="#">Community</a>
+                </div>
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AlgoVerse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===========================
             SCRIPTS
     ============================ -->
 
     <script src="js/data/algorithms.js"></script>
 
+    <script src="js/algorithms/binarySearch.js"></script>
+    <script src="js/algorithms/bubbleSort.js"></script>
+
     <script src="js/ui/hero.js"></script>
+    <script src="js/ui/stats.js"></script>
 
     <script src="js/script.js"></script>
 

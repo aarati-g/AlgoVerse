@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoVerse | Visualizer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/visualizer.css">
+</head>
+<body>
+    <!-- ===========================
+            NAVBAR
+    ============================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="assets/logo.svg" alt="AlgoVerse Logo" class="logo-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><circle cx=\'24\' cy=\'24\' r=\'24\' fill=\'%236366F1\'/></svg>'">
+                <span>AlgoVerse</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#roadmap">Roadmap</a></li>
+                <li><a href="#" class="active">Visualizer</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="login-btn">Login</button>
+                <button class="start-btn" onclick="window.location.href='index.html'">Back to Home</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===========================
+            VISUALIZER WORKSPACE
+    ============================ -->
+    <div class="visualizer-workspace">
+        
+        <!-- SIDEBAR / CONTROLS -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h3>Select Algorithm</h3>
+                <select id="algoSelect" class="custom-select">
+                    <option value="binary">Binary Search</option>
+                    <option value="bubble">Bubble Sort</option>
+                </select>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Algorithm Info</h3>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <span class="info-label">STEP</span>
+                        <span id="stepNumber">0 / 0</span>
+                    </div>
+                    <div class="info-box">
+                        <span class="info-label" id="infoTitle">TARGET</span>
+                        <span id="infoValue">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section console-wrapper">
+                <h3>Execution Log</h3>
+                <div class="console">
+                    <div class="console-output" id="consoleOutput">
+                        <p>Loading algorithm...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CANVAS -->
+        <div class="main-canvas">
+            <div class="canvas-header">
+                <h2 id="algorithmTitle">Binary Search</h2>
+            </div>
+            
+            <div class="visualization-area">
+                <div class="pointer" id="visualPointer">▼</div>
+                <div id="arrayContainer" class="array-container">
+                    <!-- Dynamic Elements Go Here -->
+                </div>
+                <div id="pointerLabel" class="pointer-label">Starting...</div>
+            </div>
+
+            <!-- PLAYBACK CONTROLS -->
+            <div class="playback-controls">
+                <div class="playback-buttons">
+                    <button id="btnPrev" class="control-btn" title="Previous Step">⏮</button>
+                    <button id="btnPlay" class="control-btn play-btn" title="Play/Pause">▶</button>
+                    <button id="btnNext" class="control-btn" title="Next Step">⏭</button>
+                    <button id="btnReset" class="control-btn" title="Reset">🔄</button>
+                </div>
+                <div class="speed-control">
+                    <span>Speed:</span>
+                    <input type="range" id="speedSlider" min="1" max="5" value="3">
+                    <span id="speedValue">1x</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===========================
+            SCRIPTS
+    ============================ -->
+    <script src="js/data/algorithms.js"></script>
+    <script src="js/algorithms/binarySearch.js"></script>
+    <script src="js/algorithms/bubbleSort.js"></script>
+    <script src="js/ui/visualizer.js"></script>
+</body>
+</html>
